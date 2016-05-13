@@ -32,15 +32,15 @@ register_deactivation_hook (__FILE__, 'cronstarter_deactivate');
 
 
 // add custom interval
-function cron_add_minute( $schedules ) {
+/*function cron_add_minute( $schedules ) {
     // Adds once every minute to the existing schedules.
     $schedules['everyminute'] = array(
-        'interval' => 15,
+        'interval' => 50,
         'display' => __( 'Once Every Minute' )
     );
     return $schedules;
 }
-add_filter( 'cron_schedules', 'cron_add_minute' );
+add_filter( 'cron_schedules', 'cron_add_minute' );*/
 
 
 // Amazon Api Call
