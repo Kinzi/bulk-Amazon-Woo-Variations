@@ -118,6 +118,7 @@ function amazon_api_call($asin) {
 
 
 function call_Amazon($asin) {
+	// sometimes API reponse is error, but then succeeds within the next few calls 
 	for ($x = 1; $x <= 21; $x++) {
 		echo 'Call #' . $x;
 		$response = amazon_api_call($asin);
@@ -129,11 +130,11 @@ function call_Amazon($asin) {
 	}
 };
 
-// Connect DB
+// Connect DB - you need to set up this file with your db connection
 require_once("db_con.php");
 
 // Load WP Files
-// will work if file is somewhere in wp-content
+// will work if this file is somewhere in wp-content
 if(!defined(ABSPATH)){
     $pagePath = explode('/wp-content/', dirname(__FILE__));
     include_once(str_replace('wp-content/' , '', $pagePath[0] . '/wp-load.php'));
